@@ -6,35 +6,40 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int test = 8;
-        Scanner in = new Scanner(System.in);
-        while(test != 0){
-            System.out.print("[0] - Завершение работы" + '\n' +
-                    "[1] - Вариант на String" + '\n' +
-                    "[2] - Ванриант на StringBuffer" + '\n' +
-                    "[3] - Вариант на ..." + '\n' +
-                    "Выберите вариант: ");
-            test = in.nextInt();
-            switch (test){
-                case 0:
-                    System.out.print("End of working");
-                    break;
-                case 1:
-                    testStringClass(in);
-                    break;
-                case 2:
-                    testStringBuilderClass(in);
-                    break;
-                case 3:
-                    testRegularExpressionsClass(in);
-                    break;
-                default:
-                    System.out.println("Вы ввели недопустимую конструкцию!");
-                    break;
+            int test = 8;
+            Scanner in = new Scanner(System.in);
+            while (test != 0) {
+                try {
+                    System.out.print("[0] - Завершение работы" + '\n' +
+                            "[1] - Вариант на String" + '\n' +
+                            "[2] - Ванриант на StringBuffer" + '\n' +
+                            "[3] - Вариант на регулярные выражения" + '\n' +
+                            "Выберите вариант: ");
+                    test = in.nextInt();
+                    switch (test) {
+                        case 0:
+                            System.out.print("End of working");
+                            break;
+                        case 1:
+                            testStringClass(in);
+                            break;
+                        case 2:
+                            testStringBuilderClass(in);
+                            break;
+                        case 3:
+                            testRegularExpressionsClass(in);
+                            break;
+                        default:
+                            System.out.println("Вы ввели недопустимую конструкцию!");
+                            break;
+                    }
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
             }
-        }
+
     }
-    static void testStringClass(Scanner in) {
+    static void testStringClass(Scanner in) throws Exception {
         TextWork object = new TextWork();
         int task = 8;
         while (task != 0){

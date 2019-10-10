@@ -48,7 +48,8 @@ public class TextWork {
         text = buf + '\n';
     }
 
-    public int findAmIn(int n){
+    public int findAmIn(int n) throws Exception{
+        if (n > indOfPar) throw new Exception("Введенное число было больше количества параграфов!");
         String str = '\n' + text;
         int start = 0, end = 0, count = 0;
         for (int i = 0; i <= str.length();i++){
